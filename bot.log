@@ -1,0 +1,18 @@
+2025-05-27 17:13:25,196 - aiogram.dispatcher - INFO - Start polling
+2025-05-27 17:13:25,266 - aiogram.dispatcher - INFO - Run polling for bot @text_stylizer_bot id=8035596147 - 'text_stylizer'
+2025-05-27 17:15:00,461 - aiogram.event - INFO - Update id=204182861 is handled. Duration 266 ms by bot id=8035596147
+2025-05-27 17:15:11,871 - aiogram.event - INFO - Update id=204182862 is handled. Duration 133 ms by bot id=8035596147
+2025-05-27 17:15:14,645 - aiogram.event - INFO - Update id=204182863 is handled. Duration 415 ms by bot id=8035596147
+2025-05-27 17:15:37,756 - aiogram.event - INFO - Update id=204182864 is handled. Duration 109 ms by bot id=8035596147
+2025-05-27 17:15:39,706 - aiogram.event - INFO - Update id=204182865 is handled. Duration 185 ms by bot id=8035596147
+2025-05-27 17:16:03,547 - aiogram.event - INFO - Update id=204182866 is handled. Duration 282 ms by bot id=8035596147
+2025-05-27 17:16:05,196 - aiogram.event - INFO - Update id=204182867 is handled. Duration 181 ms by bot id=8035596147
+2025-05-27 17:16:14,738 - aiogram.event - INFO - Update id=204182868 is handled. Duration 108 ms by bot id=8035596147
+2025-05-27 17:16:16,999 - aiogram.event - INFO - Update id=204182869 is handled. Duration 190 ms by bot id=8035596147
+2025-05-27 17:18:55,203 - aiogram.event - INFO - Update id=204182870 is handled. Duration 90 ms by bot id=8035596147
+2025-05-27 17:18:57,323 - aiogram.event - INFO - Update id=204182871 is handled. Duration 189 ms by bot id=8035596147
+2025-05-27 17:19:12,309 - aiogram.event - INFO - Update id=204182872 is handled. Duration 110 ms by bot id=8035596147
+2025-05-27 17:19:20,209 - aiogram.event - INFO - Update id=204182873 is handled. Duration 257 ms by bot id=8035596147
+2025-05-27 17:19:49,266 - aiogram.dispatcher - WARNING - Received SIGINT signal
+2025-05-27 17:19:49,267 - aiogram.dispatcher - INFO - Polling stopped for bot @text_stylizer_bot id=8035596147 - 'text_stylizer'
+2025-05-27 17:19:49,267 - aiogram.dispatcher - INFO - Polling stopped

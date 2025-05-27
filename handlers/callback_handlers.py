@@ -16,7 +16,7 @@ MIN_IMAGE_WIDTH = 400
 MIN_IMAGE_HEIGHT = 150
 PADDING = 40
 
-@callback_router.callback_query(F.data.in_(["zalgo", "fancy", "spaced", "uppercase", "text_to_image"]))
+@callback_router.callback_query(F.data.in_(["zalgo", "fancy", "spaced", "uppercase", "text_to_image", "bold"]))
 async def handle_callback(callback: CallbackQuery, state: FSMContext):
     data = await state.get_data()
     text = data.get('text', '')
@@ -31,6 +31,8 @@ async def handle_callback(callback: CallbackQuery, state: FSMContext):
             modified =  " ".join(text.upper())
         elif operation == "fancy":
             modified = generate_fancy_text(text.upper())
+        elif operation == "bold":
+            modified = generate_fancy_text(text, style='bold')
         elif operation == "text_to_image":
             # Генерируем изображение с текстом
             try:

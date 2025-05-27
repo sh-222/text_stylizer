@@ -1,6 +1,36 @@
-def generate_fancy_text(text):
-    """Generate fancy text with special characters"""
-    # Using tuple for character pairs as it's more memory efficient than dict literal
+def generate_fancy_text(text, style='default'):
+    """Generate fancy text with special characters
+    Args:
+        text: Input text to transform
+        style: Style to apply ('default', 'bold')
+    """
+    if style == 'bold':
+        # For Latin letters use bold Unicode
+        latin_bold_map = {
+            'a': '𝗮', 'b': '𝗯', 'c': '𝗰', 'd': '𝗱', 'e': '𝗲', 'f': '𝗳',
+            'g': '𝗴', 'h': '𝗵', 'i': '𝗶', 'j': '𝗷', 'k': '𝗸', 'l': '𝗹',
+            'm': '𝗺', 'n': '𝗻', 'o': '𝗼', 'p': '𝗽', 'q': '𝗾', 'r': '𝗿',
+            's': '𝘀', 't': '𝘁', 'u': '𝘂', 'v': '𝘃', 'w': '𝘄', 'x': '𝘅',
+            'y': '𝘆', 'z': '𝘇',
+            'A': '𝗔', 'B': '𝗕', 'C': '𝗖', 'D': '𝗗', 'E': '𝗘', 'F': '𝗙',
+            'G': '𝗚', 'H': '𝗛', 'I': '𝗜', 'J': '𝗝', 'K': '𝗞', 'L': '𝗟',
+            'M': '𝗠', 'N': '𝗡', 'O': '𝗢', 'P': '𝗣', 'Q': '𝗤', 'R': '𝗥',
+            'S': '𝗦', 'T': '𝗧', 'U': '𝗨', 'V': '𝗩', 'W': '𝗪', 'X': '𝗫',
+            'Y': '𝗬', 'Z': '𝗭'
+        }
+        
+        # For Cyrillic letters use double symbols with slight offset
+        result = []
+        for char in text:
+            if char in latin_bold_map:
+                result.append(latin_bold_map[char])
+            elif '\u0400' <= char <= '\u04FF':  # Cyrillic range
+                result.append(char + '\u0332')  # Combining low line
+            else:
+                result.append(char)
+        return ''.join(result)
+    
+    # Default fancy characters
     fancy_chars = (
         ('a', 'ａ'), ('b', 'ｂ'), ('c', 'ｃ'), ('d', 'ｄ'), ('e', 'ｅ'), ('f', 'ｆ'), 
         ('g', 'ｇ'), ('h', 'ｈ'), ('i', 'ｉ'), ('j', 'ｊ'), ('k', 'ｋ'), ('l', 'ｌ'), 
@@ -25,6 +55,5 @@ def generate_fancy_text(text):
         ('Ч', 'ℭ'), ('Ш', '𝔖'), ('Щ', '𝔖'), ('Ъ', '𝔜'), ('Ы', 'ℑ'), ('Ь', '𝔍'),
         ('Э', '𝔈'), ('Ю', '𝔘'), ('Я', '𝔄')
     )
-    # Create the dictionary once and reuse it in the list comprehension
     fancy_map = dict(fancy_chars)
-    return ' '.join(fancy_map.get(c, c) for c in text)
+    return ''.join(fancy_map.get(c, c) for c in text)
